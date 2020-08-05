@@ -25,8 +25,6 @@ export default class ClassesController {
 
     const timeInMinutes = convertHourToMinutes(time);
 
-    console.log(timeInMinutes);
-
     const classes = await db('classes')
       .whereExists(function () {
         this.select('class_schedule.*')
